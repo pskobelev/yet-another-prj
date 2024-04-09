@@ -1,0 +1,16 @@
+<h3>
+    <a href="/">Home</a>
+    <a href="/password">PwdGen</a>
+    {#    <a href="/room">Room</a>#}
+
+    <form action="{% url 'home' %}" method="get">
+        <input type="text" name="q" placeholder="Search rooms.">
+    </form>
+
+    {% if request.user.is_authenticated %}
+        <p>Hello, {{ request.user }}</p>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+</h3>
