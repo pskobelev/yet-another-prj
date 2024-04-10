@@ -13,7 +13,7 @@ SECRET_KEY = "django-insecure-%r3_6mb4^sp$yf8x5mg^t%$&%_68+788(dxt)m47q3*66xldd6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', '192.168.1.69', '192.168.1.140']
+ALLOWED_HOSTS = ["*", "192.168.1.69", "192.168.1.140"]
 
 # Application definition
 
@@ -24,14 +24,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
-    'django_prometheus',
-    "app.apps.AppConfig"
+    "django_prometheus",
+    "app.apps.AppConfig",
 ]
 
 MIDDLEWARE = [
     "django_prometheus.middleware.PrometheusBeforeMiddleware",
-
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -39,9 +37,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-
     "django_prometheus.middleware.PrometheusAfterMiddleware",
-
 ]
 
 ROOT_URLCONF = "superapp.urls"
@@ -49,8 +45,7 @@ ROOT_URLCONF = "superapp.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates']
-        ,
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
