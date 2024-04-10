@@ -1,4 +1,4 @@
-from django.contrib import admin
+from django.contrib import admin  # type: ignore
 
 from app.models import Room, Message, Topic
 

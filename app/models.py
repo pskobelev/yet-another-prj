@@ -5,6 +5,9 @@ from django.db import models
 
 
 class Topic(ExportModelOperationsMixin('topic'), models.Model):
+    """
+    Модель тем сообщений
+    """
     name = models.CharField(max_length=200)
 
     def __str__(self):
@@ -12,6 +15,9 @@ class Topic(ExportModelOperationsMixin('topic'), models.Model):
 
 
 class Room(ExportModelOperationsMixin('room'), models.Model):
+    """
+    Модель комнат
+    """
     host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=200)
@@ -29,6 +35,9 @@ class Room(ExportModelOperationsMixin('room'), models.Model):
 
 
 class Message(ExportModelOperationsMixin('message'), models.Model):
+    """
+    Модель сообщений на форуме
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
     body = models.TextField()
